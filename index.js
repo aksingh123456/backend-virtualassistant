@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 // import express from "express";
 // import dotenv from "dotenv";
 // dotenv.config();
@@ -21,31 +20,38 @@
 // app.listen(port,()=>{
 //   connectdb()
 //   console.log("server connected")
-// }) 
->>>>>>> e0e4853 (my first commit)
+
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import connectdb from "./config/db.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
+
 import authRouter from "./routes/auth.routes.js";
+import userRouter from "./routes/user.routes.js";   // <-- import userRouter
+
 const app=express();
-app.use(cors({origin:"https://localhost:5173",
-  credentials:true
-}))
+
+app.use(cors({
+  origin: "http://localhost:5173",  // frontend ka origin
+  credentials: true
+}));
+
 const port=process.env.PORT || 5000;
 app.use(express.json())
 app.use(cookieParser())
+
+// ✅ mount routes
 app.use("/api/auth", authRouter)
+app.use("/api/user", userRouter)   // <-- mount user routes
+
 app.get("/",(req,res)=>{
   res.send("hi");
 })
+
 app.listen(port,()=>{
   connectdb()
   console.log("server connected")
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> e0e4853 (my first commit)
+
