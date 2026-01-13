@@ -29,8 +29,8 @@ export const signup = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 15 * 24 * 60 * 60 * 1000, // ✅ number, not string
-      sameSite: "strict",
-      secure: false,
+      sameSite: "None",
+      secure: true,
     });
 
     return res.status(201).json(user);
@@ -58,9 +58,9 @@ export const login = async (req, res) => {
     const token = genToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
       maxAge: 15 * 24 * 60 * 60 * 1000, // ✅ fixed
-      sameSite: "strict",
+      sameSite: "None",
+      secure: true,
     });
 
     return res.status(200).json(user);
