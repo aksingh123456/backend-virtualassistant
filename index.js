@@ -34,9 +34,13 @@ import userRouter from "./routes/user.routes.js";
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",  // dev
+    "https://frontend-virtualassistant-41ta.vercel.app"  // deployed frontend
+  ],
   credentials: true
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
