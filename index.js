@@ -35,7 +35,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    "http://localhost:5173",  // dev
+    // "http://localhost:5173",  // dev
     "https://frontend-virtualassistant-4q2s.vercel.app"  // deployed frontend
   ],
   credentials: true
