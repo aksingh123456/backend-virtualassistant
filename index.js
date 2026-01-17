@@ -54,7 +54,7 @@ app.get("/", (req, res) => {
 });
 
 const port = process.env.PORT || 5000;
-// app.listen(port, () => {
-//   connectdb();
-//   console.log("Server connected on port", port);
-// });
+app.listen(port, () => {
+  connectdb();
+  console.log("Server connected on port", port);
+});
