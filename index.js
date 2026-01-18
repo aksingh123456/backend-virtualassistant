@@ -34,7 +34,7 @@ import userRouter from "./routes/user.routes.js";
 const app = express();
 
 app.use(cors({
-  origin: "https://backend-virtualassistant.vercel.app/",
+  origin: "https://backend-virtualassistant.vercel.app",
   credentials: true
 }));
 
