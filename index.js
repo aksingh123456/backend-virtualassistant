@@ -36,8 +36,9 @@ const app = express();
   // credentials: true
 app.use(cors({
   origin: [
-    "https://frontend-virtualassistant1.onrender.com",
-    "https://frontend-virtualassistant.onrender.com"
+    "http://localhost:5173",                            // local dev
+    "https://frontend-virtualassistant1.onrender.com",  // alternate live frontend
+    "https://frontend-virtualassistant.onrender.com"    // main live frontend
   ],
   credentials: true
 }));
